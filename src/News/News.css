@@ -1,0 +1,37 @@
+.news {
+    flex: 0.3;
+    max-width: 600px;
+    min-width: 600px;
+}
+
+.news::-webkit-scrollbar {
+    display: none;
+}
+
+.news__header {
+    position: sticky;
+    background-color: white;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #E8E8E8;
+    border-top:1px solid #E8E8E8;
+    padding: 1px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.news__tweetStarIcon {
+    margin-left: 85%;
+}
+
+.news__tweetStarIcon:hover {
+    background-color: #d0c2ff;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+}
+
+.news__header > h2 {
+    font-size: 20px;
+    font-weight: 650;
+
+}

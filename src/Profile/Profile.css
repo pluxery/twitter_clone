@@ -1,0 +1,206 @@
+.profile {
+    flex: 0.3;
+    position: relative;
+    max-width: 600px;
+    min-width: 600px;
+}
+
+.avatarProfile{
+    display: flex;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 300px;
+    position: relative;
+    margin-top: -130px !important;
+    margin-right: 230px;
+    margin-bottom: 15px;
+    border: 4px solid white;
+}
+
+.avatarUser{
+    display: flex;
+    width: 20vh;
+    height: 20vh;
+    border-radius: 300px;
+    position: relative;
+    margin-top: -130px !important;
+    margin-right: 260px;
+    margin-bottom: 15px;
+    border: 4px solid white;
+}
+.profile__backBar {
+    top: 0;
+    position: sticky !important;
+    display: flex;
+    border: 1px solid #E8E8E8;
+    align-items: center;
+    background-color: white;
+    z-index: 100;
+
+}
+
+.profile__containerAvatar {
+    border: red 1px solid;
+    display: flex;
+
+
+}
+
+.profile__avatar {
+    position: absolute !important;
+    top: 210px;
+    left: 10px;
+    border: white 4px solid;
+}
+
+.profile__barNameTweets {
+    line-height: 0.2;
+
+}
+
+.profile__barNameTweets > h4 {
+    margin-bottom: 1px;
+
+}
+
+.profile__barNameTweets > p {
+
+
+}
+
+
+.profile__backIcon {
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.profile__backIcon :hover {
+    background-color: #d0c2ff;
+    color: mediumpurple;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+}
+
+.profile__barInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__poster > img {
+    max-width: 680px;
+    max-height: 250px;
+
+}
+
+.profile__poster {
+}
+
+.profile__buttons {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+
+}
+
+.profile__moreIcon {
+    border: gray 1px solid;
+    border-radius: 50px;
+    color: gray;
+    margin-right: 10px;
+}
+
+.profile__moreIcon:hover {
+    background-color: #d0c2ff;
+    color: mediumpurple;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+}
+
+.profile__followButton {
+
+    background-color: mediumpurple !important;
+    color: white !important;
+    font-weight: 750 !important;
+    border: none !important;
+    border-radius: 30px !important;
+    margin-right: 10px !important;
+    text-transform: inherit !important;
+
+}
+
+.profile__followButton:hover {
+    background-color: #c2adff !important;
+}
+
+.profile__userName {
+    margin-top: 15px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile__userName > p {
+    color: gray;
+    margin-top: 0;
+
+}
+
+.profile__userName > h2 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.profile__miniInformation {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    color: gray;
+}
+
+.profile__fullDescription {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.profile__textGray {
+    color: gray;
+}
+
+.profile__geoAndDate {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    color: gray;
+}
+
+.profile__geoIcon {
+    margin-left: 10px;
+    color: gray;
+}
+
+.profile__dateIcon {
+    margin-left: 15px;
+    color: gray;
+}
+
+.profile__location {
+    display: flex;
+    align-items: center;
+}
+
+.profile__date {
+    display: flex;
+    align-items: center;
+}
+
+.profile__followInformation {
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.black {
+    color: black;
+}

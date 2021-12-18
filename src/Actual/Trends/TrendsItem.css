@@ -1,0 +1,36 @@
+.trendsItem {
+    padding: 1px 10px;
+    margin-bottom: 30px;
+}
+
+.trendsItem:hover {
+    background-color: #e8e8e8;
+    border-radius: 20px;
+}
+
+.trendsItem__thinText {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+    size: 15px;
+    margin: 0;
+}
+
+.trendsItem__tag {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0;
+}
+
+.trendsItem__moreIcon {
+    color: gray;
+
+}
+
+.trendsItem__moreIcon:hover {
+    background-color: #d0c2ff;
+    color: mediumpurple;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+}

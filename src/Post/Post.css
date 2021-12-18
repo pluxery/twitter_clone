@@ -1,0 +1,91 @@
+.post {
+    display: flex;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+.post__image {
+    text-align: center;
+}
+.post__image > img {
+    border-radius: 20px;
+    height: 300px;
+
+}
+
+.post__header {
+
+}
+.active{
+
+}
+
+.post__headerDescription {
+    margin-bottom: 10px;
+    font-size: 15px;
+
+
+}
+
+.post__headerText > h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
+
+
+}
+
+.post__nameText {
+
+    display: flex;
+    text-align: center;
+
+
+}
+.post__user{
+    color: gray;
+}
+
+.post__footer {
+    display: flex;
+    justify-content: space-evenly;
+
+
+
+}
+
+.post__CommentIcon:hover {
+
+    color: mediumpurple;
+}
+
+.post__RetweetIcon:hover {
+
+    color: lawngreen;
+}
+
+.post__LikeIcon:hover {
+
+    color: red;
+}
+
+.post__ShareIcon:hover {
+
+    color: mediumpurple;
+}
+
+.post__mark {
+    font-size: 14px;
+    color: mediumpurple;
+}
+
+.post__avatar {
+    padding: 20px;
+}
+
+.post__moreIcon {
+    margin-right: 10px;
+}

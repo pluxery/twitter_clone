@@ -1,0 +1,8 @@
+.layout{
+
+    overflow-y: scroll;
+}
+
+.layout::-webkit-scrollbar{
+   display: none;
+}

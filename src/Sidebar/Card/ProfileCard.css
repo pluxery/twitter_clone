@@ -1,0 +1,23 @@
+.card{
+    border: solid 1px mediumpurple ;
+    border-radius: 40px;
+    margin-top: 40px;
+
+}
+.card__content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.card__user{
+    padding: 10px;
+}
+.card__user > p{
+
+    margin: 0;
+}
+
+.card:hover{
+    background-color:#E8E8E8;
+}

@@ -1,0 +1,97 @@
+.login {
+
+}
+
+.login__window{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px 120px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.login__field{
+    margin: 10px;
+    padding: 15px;
+    border-radius: 50px;
+    border: #c2adff 2px solid;
+    outline: none;
+    font-size: 20px;
+
+}
+
+.login__buttonLogin{
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    background-color: mediumpurple !important;
+    color: white !important;
+    font-weight: 750 !important;
+    border: none !important;
+    border-radius: 30px !important;;
+    text-transform: inherit !important;
+    margin-top: 20px !important;
+    min-width: 200px !important;
+}
+.login__buttonModal{
+    padding: 10px !important;
+    text-decoration: none;
+    background-color: #a80b00 !important;
+    color: white !important;
+    font-weight: 750 !important;
+    border: none !important;
+    border-radius: 50px !important;;
+    text-transform: inherit !important;
+    margin: 5px !important;
+
+}
+
+.login__icons{
+    margin-top: 20px;
+}
+.login__googleIcon{
+    color: gray;
+    margin-left: 12px;
+
+}
+.login__instIcon{
+    color: #a84c8e;
+    margin-left: 12px;
+}
+
+.login__appleIcon{
+    color: black;
+    margin-left: 12px;
+}
+
+.login__facebookIcon{
+    color: blue;
+    margin-left: 12px;
+}
+.login__instIcon:hover {
+    background-color: #e4e4e4 !important;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+}
+.login__googleIcon:hover{
+    background-color: #e4e4e4 !important;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+
+}
+
+.login__appleIcon:hover {
+    background-color: #cacaca !important;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+}
+
+.login__facebookIcon:hover{
+    background-color: #abbaff !important;
+    border-radius: 50px;
+    transition: background-color 0.5s;
+
+}

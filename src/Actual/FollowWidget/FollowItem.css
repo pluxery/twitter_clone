@@ -1,0 +1,33 @@
+.followItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 16px;
+    padding: 5px;
+}
+
+.followItem__username{
+    margin-left: 10px;
+}
+
+.followItem__textWeight{
+    font-weight: 550;
+}
+
+.followItem__username>p{
+    margin: 0;
+}
+
+.followItem_button {
+    background-color: mediumpurple !important;
+    color: white !important;
+    font-weight: 750 !important;
+    border: none !important;
+    border-radius: 30px !important;
+    width: 80px;
+    height: 40px !important;
+    text-transform: inherit !important;
+    margin-top: 10px !important;
+    margin-left: auto !important;
+}
