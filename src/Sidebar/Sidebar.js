@@ -45,6 +45,7 @@ function Sidebar() {
 
             <SidebarItem Icon={MoreHorizIcon} text={"More"}/>
             <Button variant={"outlined"} className={"sidebar__tweet"} fullWidth>Tweet</Button>
+
             <ProfileCard/>
             <AuthModal/>
 

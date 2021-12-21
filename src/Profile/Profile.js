@@ -4,27 +4,28 @@ import "./Profile.css";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import FreeBreakfastOutlinedIcon from '@mui/icons-material/FreeBreakfastOutlined';
-import {Avatar, Button} from "@mui/material";
+import {Button} from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
 import Layout from "../Layout/Layout";
 import Tabs from "./Tabs/Tabs";
+import profile_db from "../Data/Profile_db";
 
 
 function Profile({
-                     user = "dranov",
-                     avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStAx3uW6Gyx9pIyNquyecY-BMLVIZGx_KaDOMzJhcUMY01gviZzd6x8y2QYUOsWEbMLBo&usqp=CAU",
-                     name = "Dranov",
-                     tweets = "1",
-                     mark = true,
-                     followers = "213",
-                     following = "543",
-                     image = "https://i.pinimg.com/originals/11/94/bd/1194bd2b268f99c2f739ace4928ed2d9.jpg",
-                     location = "Vladivostok",
-                     dateRegistration = "March 2020",
-                     miniDescription = "Student FEFU",
-                     fullDescription = "здесь описание.",
+                     user = profile_db.user,
+                     avatar = profile_db.avatar,
+                     name = profile_db.name,
+                     tweets = profile_db.tweets,
+                     mark = profile_db.mark,
+                     followers = profile_db.followers,
+                     following = profile_db.following,
+                     image = profile_db.image,
+                     location = profile_db.location,
+                     dateRegistration = profile_db.dateRegistration,
+                     miniDescription = profile_db.miniDescription,
+                     fullDescription = profile_db.fullDescription,
                      tab = <Tabs/>,
                  }) {
     return (

@@ -1,15 +1,19 @@
 import React from "react";
 import "./Tabs.css"
 import Post from "../../Post/Post";
+import post_db from "../../Data/Post_db";
+import profile_db from "../../Data/Profile_db";
 
-export default function TabTweets(){
-    return(
+export default function TabTweets() {
+    let post = post_db[1];
+    return (
         <div>
-            <Post name={"Dranov"} user={"dranov"}
-                  text={"Учение без размышления бесполезно, но и размышление без учения опасно"}
-                  avatar={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStAx3uW6Gyx9pIyNquyecY-BMLVIZGx_KaDOMzJhcUMY01gviZzd6x8y2QYUOsWEbMLBo&usqp=CAU"}
-                  image={"https://i.pinimg.com/originals/d2/6e/18/d26e18036945de590092c6e143e035dc.jpg"}
-                  blueMark={true}/>
+            <Post name={profile_db.name}
+                  user={profile_db.user}
+                  avatar={profile_db.avatar}
+                  text={post.text}
+                  image={post.image}
+                  blueMark={profile_db.mark}/>
 
         </div>
     )

@@ -9,7 +9,7 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "../Actual/Trends/TrendsItem.css"
 
-function Post({name, user, blueMark, image, avatar, text}) {
+function Post({name, user, blueMark, image, avatar, text, like}) {
     return (
         <div className={"post"}>
             <div className={"post__avatar"}>
@@ -44,7 +44,7 @@ function Post({name, user, blueMark, image, avatar, text}) {
                 <div className={"post__footer"}>
                     <ChatBubbleOutlineOutlinedIcon fontSize={"small"} className={"post__CommentIcon"}/>
                     <RepeatIcon fontSize={"small"} className={"post__RetweetIcon"}/>
-                    <FavoriteBorderIcon fontSize={"small"} className={"post__LikeIcon"}/>
+                    <FavoriteBorderIcon fontSize={"small"} className={like ? "post__redLikeIcon" : "post__LikeIcon"}/>
                     <FileDownloadOutlinedIcon fontSize={"small"} className={"post__ShareIcon"}/>
                 </div>
             </div>

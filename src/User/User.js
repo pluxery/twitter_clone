@@ -8,10 +8,11 @@ import FreeBreakfastOutlinedIcon from "@mui/icons-material/FreeBreakfastOutlined
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
 import {useParams} from "react-router-dom";
+import profile_db from "../Data/Profile_db";
 
 
 export default function User({
-                                 avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStAx3uW6Gyx9pIyNquyecY-BMLVIZGx_KaDOMzJhcUMY01gviZzd6x8y2QYUOsWEbMLBo&usqp=CAU"
+                                 avatar = profile_db.avatar
                              }) {
     const {id} = useParams();
     return (
@@ -40,7 +41,7 @@ export default function User({
                 </div>
 
                 <div className={"profile__userName"}>
-                    <h2>user {<VerifiedIcon className={"post__mark"}/>}</h2>
+                    <h2>{id} {<VerifiedIcon className={"post__mark"}/>}</h2>
                     <p>{"@" + id}</p>
                 </div>
 

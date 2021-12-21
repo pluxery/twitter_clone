@@ -89,3 +89,6 @@
 .post__moreIcon {
     margin-right: 10px;
 }
+.post__redLikeIcon {
+    color: red;
+}
