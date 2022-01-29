@@ -10,7 +10,6 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "../Actual/Trends/TrendsItem.css"
 import {useParams} from "react-router-dom";
 import {useReqHandler} from "../hooks/useReqHandler";
-import {Button} from "@material-ui/core";
 import axios from "axios";
 import Layout from "../Layout/Layout";
 

@@ -50,6 +50,7 @@
 }
 
 .post__footer {
+    min-width: 600px;
     display: flex;
     justify-content: space-evenly;
 
