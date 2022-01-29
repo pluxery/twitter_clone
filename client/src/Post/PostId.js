@@ -12,6 +12,7 @@ import {useParams} from "react-router-dom";
 import {useReqHandler} from "../hooks/useReqHandler";
 import {Button} from "@material-ui/core";
 import axios from "axios";
+import Layout from "../Layout/Layout";
 
 function PostId() {
 
@@ -19,7 +20,7 @@ function PostId() {
     const params = useParams();
 
     const [post, setPost] = useState({
-        avatar:''
+        avatar: ''
     })
 
     useEffect(async () => {
@@ -33,46 +34,48 @@ function PostId() {
 
 
     return (
-        <div className={"post"}>
-            <div className={"post__avatar"}>
-                <Avatar src={post.avatar}/>
-            </div>
+        <Layout>
+            <div className={"post"}>
+                <div className={"post__avatar"}>
+                    <Avatar src={post.avatar}/>
+                </div>
 
-            <div className={"post__body"}>
-                <div className={"post__header"}>
-                    <div className={"post__headerText"}>
-                        <h3>
+                <div className={"post__body"}>
+                    <div className={"post__header"}>
+                        <div className={"post__headerText"}>
+                            <h3>
                                 <span
                                     className={"post__nameText"}>{'user'}
                                     {post.blueMark && <VerifiedIcon className={"post__mark"}/>}
                                 </span>
 
-                            <span className={"post__moreIcon"}>
+                                <span className={"post__moreIcon"}>
                                 <MoreHorizIcon className={"trendsItem__moreIcon"}/>
                             </span>
-                        </h3>
+                            </h3>
+
+                        </div>
+
+                        <div className={"post__headerDescription"}>
+                            <p>{post.text}</p>
+                        </div>
+                    </div>
+
+                    <div className={"post__image"}>
+                        {<img src={post.image} alt={"not found"}/>}
 
                     </div>
 
-                    <div className={"post__headerDescription"}>
-                        <p>{post.text}</p>
+                    <div className={"post__footer"}>
+                        <ChatBubbleOutlineOutlinedIcon fontSize={"small"} className={"post__CommentIcon"}/>
+                        <RepeatIcon fontSize={"small"} className={"post__RetweetIcon"}/>
+                        <FavoriteBorderIcon fontSize={"small"}
+                                            className={post.like ? "post__redLikeIcon" : "post__LikeIcon"}/>
+                        <FileDownloadOutlinedIcon fontSize={"small"} className={"post__ShareIcon"}/>
                     </div>
-                </div>
-
-                <div className={"post__image"}>
-                    {<img src={post.image} alt={"not found"}/>}
-
-                </div>
-
-                <div className={"post__footer"}>
-                    <ChatBubbleOutlineOutlinedIcon fontSize={"small"} className={"post__CommentIcon"}/>
-                    <RepeatIcon fontSize={"small"} className={"post__RetweetIcon"}/>
-                    <FavoriteBorderIcon fontSize={"small"}
-                                        className={post.like ? "post__redLikeIcon" : "post__LikeIcon"}/>
-                    <FileDownloadOutlinedIcon fontSize={"small"} className={"post__ShareIcon"}/>
                 </div>
             </div>
-        </div>
+        </Layout>
     )
 }
 
