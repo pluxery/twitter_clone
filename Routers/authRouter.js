@@ -5,13 +5,14 @@ const config = require('config')
 const jwt = require('jsonwebtoken')
 
 const User = require('../Models/User')
+const assert = require("assert");
 const authRouter = Router()
 
 
-authRouter.post("/user/:id", async (req, res) => {
+authRouter.get("/user/:id", async (req, res) => {
     try {
         const user = await User.findOne({_id: req.params.id});
-        res.json(user.name)
+        res.json(user)
     } catch (error) {
         res.status(400).json({
             message: error.message
@@ -19,12 +20,21 @@ authRouter.post("/user/:id", async (req, res) => {
     }
 })
 
+authRouter.put("/update/:id", async (req, res) => {
+        try {
+            await User.findByIdAndUpdate(req.params.id, {$set: req.body})
+            return res.status(200).json({result: 'update'});
+        } catch (err) {
+            return res.status(400).json({message: err.message});
+        }
+    }
+);
+
 
 authRouter.post('/register', [
         check('email', 'Некорректный email').isEmail(),
-        check('password', 'Минимальная длина пароля 6 символов')
-            .isLength({min: 6}), check('password', 'Минимальная длина логина 2 символа')
-            .isLength({min: 2})
+        check('password', 'Минимальная длина пароля 6 символов').isLength({min: 6}),
+        check('name', 'Минимальная длина логина 2 символа').isLength({min: 2}),
     ],
     async (req, res) => {
         try {
@@ -35,13 +45,13 @@ authRouter.post('/register', [
                     message: 'Некорректный данные при регистрации'
                 })
             }
-            const {name, email, password} = req.body
+            const {name, email, password, age, sex, city} = req.body
             const isExistUser = await User.findOne({email})
             if (isExistUser) {
                 return res.status(400).json({message: 'Пользователь уже существует'})
             }
             const hashedPassword = await bcrypt.hash(password, 12)
-            const newUser = new User({name, email, password: hashedPassword})
+            const newUser = new User({name, email, age, sex, city, password: hashedPassword})
             await newUser.save()
             res.status(201).json({message: 'Пользователь создан'})
         } catch (e) {

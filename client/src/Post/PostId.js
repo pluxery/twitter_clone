@@ -9,13 +9,13 @@ import VerifiedIcon from '@mui/icons-material/Verified';
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "../Actual/Trends/TrendsItem.css"
 import {useParams} from "react-router-dom";
-import {useReqHandler} from "../hooks/useReqHandler";
+import {useRequest} from "../hooks/useRequest";
 import axios from "axios";
 import Layout from "../Layout/Layout";
 
 function PostId() {
 
-    const {request} = useReqHandler
+    const {request} = useRequest
     const params = useParams();
 
     const [post, setPost] = useState({

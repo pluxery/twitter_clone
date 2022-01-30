@@ -8,13 +8,19 @@ import AppleIcon from "@mui/icons-material/Apple";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import {Button} from "@mui/material";
 import './Login.css'
+import DateRangeIcon from "@mui/icons-material/DateRange";
+import WcIcon from "@mui/icons-material/Wc";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
 
 export default function Register() {
     const [form, setForm] = useState({
         name: '',
         email: '',
-        password: ''
+        password: '',
+        age: null,
+        sex: '',
+        city: ''
     })
 
     const changeHandler = event => {
@@ -24,8 +30,8 @@ export default function Register() {
 
     const registerHandler = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/sign/register', {...form})}
-        catch (e) {
+            const response = await axios.post('http://localhost:5000/sign/register', {...form})
+        } catch (e) {
         }
     }
 
@@ -56,9 +62,45 @@ export default function Register() {
                    value={form.password}
                    onChange={changeHandler}/>
 
+            <input className={"login__field"}
+                   placeholder={'age'}
+                   type='text'
+                   name='age'
+                   value={form.age}
+                   onChange={changeHandler}/>
+
+
+            <div className={'edit-field'}>
+                <WcIcon className={"sidebar__twitterIcon"}/>
+
+                <input className={"edit-input"}
+                       id='m'
+                       type='radio'
+                       name='sex'
+                       value={'man'}
+                       onChange={changeHandler}/>
+                <label htmlFor={'m'}>man</label>
+
+                <input className={"edit-input"}
+                       id='g'
+                       type='radio'
+                       name='sex'
+                       value={'girl'}
+                       onChange={changeHandler}/>
+                <label htmlFor={'g'}>woman</label>
+            </div>
+
+            <input className={"login__field"}
+                   placeholder={'city'}
+                   type='text'
+                   name='city'
+                   value={form.city}
+                   onChange={changeHandler}/>
+
+
             <Button className={"login__buttonLogin"}
                     onClick={registerHandler}>
-                    Зарегестрироваться
+                Зарегестрироваться
             </Button>
 
             <NavLink to={'/'}>

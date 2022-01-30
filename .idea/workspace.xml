@@ -3,9 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="d65d6e1c-f244-4352-8d67-9a940ccec31f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Post/Post.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Post/Post.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routers/authRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routers/authRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Authorization/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Authorization/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Explore/Explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Explore/Explore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/News/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/News/News.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Post/PostId.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Post/PostId.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabLikes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabLikes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabMedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabMedia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabReplies.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabReplies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabTweets.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabTweets.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/Tabs.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/Tabs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Tweet/Tweet.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Tweet/Tweet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/useReqHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useRequest.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +29,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -39,6 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -56,7 +71,9 @@
       <updated>1643335417682</updated>
       <workItem from="1643335420733" duration="22000" />
       <workItem from="1643335474823" duration="3169000" />
-      <workItem from="1643354695825" duration="33635000" />
+      <workItem from="1643354695825" duration="34217000" />
+      <workItem from="1643428092843" duration="1962000" />
+      <workItem from="1643573400307" duration="10318000" />
     </task>
     <servers />
   </component>
@@ -73,5 +90,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
