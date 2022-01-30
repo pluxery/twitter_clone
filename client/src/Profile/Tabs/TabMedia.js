@@ -1,28 +1,32 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./Tabs.css"
 import Profile from "../Profile";
 import Tabs from "./Tabs";
 import post_db from "../../Data/Post_db";
 import Post from "../../Post/Post";
+import {useRequest} from "../../hooks/useRequest";
 
 export default function TabMedia() {
+    const {request} = useRequest()
+    const [posts, setPosts] = useState([])
+
+
+    useEffect(() => {
+        const getPost = async () => {
+            const res = await request('http://localhost:5000/post')
+            setPosts(res)
+        }
+        getPost();
+
+    }, [setPosts])
     return (
         <Profile tab={
             <Tabs>
-                {post_db.map((item, pos) => {
-                        if (item.image) {
-                            return (
-                                <Post name={item.name}
-                                      text={item.text}
-                                      user={item.user}
-                                      avatar={item.avatar}
-                                      image={item.image}
-                                      blueMark={item.blueMark}
-                                />
-                            )
-                        }
+                {posts.map((item) => {
+                    if (item.image) {
+                        return (<Post post={item}/>)
                     }
-                )
+                })
                 }
             </Tabs>
         }/>

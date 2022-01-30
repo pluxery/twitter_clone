@@ -7,12 +7,12 @@ import Trends from "../Actual/Trends/Trends";
 import Post from "../Post/Post";
 import {MoreHorizOutlined} from "@material-ui/icons";
 import post_db from "../Data/Post_db";
-import {useReqHandler} from "../hooks/useReqHandler";
+import {useRequest} from "../hooks/useRequest";
 import {Button} from "@material-ui/core";
 
 export default function Explore() {
 
-    const {request} = useReqHandler()
+    const {request} = useRequest()
     const [posts, setPosts] = useState([])
 
     const [form, setForm] = useState({

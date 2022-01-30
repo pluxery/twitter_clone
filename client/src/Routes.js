@@ -13,6 +13,7 @@ import Explore from "./Explore/Explore";
 import Login from "./Authorization/Login";
 import Register from "./Authorization/Register";
 import PostId from "./Post/PostId";
+import EditProfile from "./Profile/EditProfile";
 
 export const useRoutes = (isSignIn) => {
 
@@ -21,6 +22,7 @@ export const useRoutes = (isSignIn) => {
             <Routes>
                 <Route path="/feed" exact element={<News/>}/>
                 <Route path="/profile/:id" exact element={<Profile/>}/>
+                <Route path="/profile/edit" exact element={<EditProfile/>}/>
                 <Route path="/user/:id" exact element={<User/>}/>
 
                 <Route path="/post/:id" exact element={<PostId/>}/>

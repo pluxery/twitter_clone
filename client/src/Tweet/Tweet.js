@@ -5,13 +5,12 @@ import CropOriginalIcon from '@mui/icons-material/CropOriginal';
 import GifIcon from '@mui/icons-material/Gif';
 import MoodIcon from '@mui/icons-material/Mood';
 import DateRangeIcon from '@mui/icons-material/DateRange';
-import {SignInContext} from "../Authorization/SignInContext";
-import {useReqHandler} from "../hooks/useReqHandler";
-import axios from "axios";
+import {useRequest} from "../hooks/useRequest";
+
 
 function Tweet({avatar}) {
 
-    const {request} = useReqHandler()
+    const {request} = useRequest()
     const [form, setForm] = useState({
         text: String,
         avatar: avatar,

@@ -5,23 +5,23 @@ import Post from "../Post/Post";
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import Layout from "../Layout/Layout";
 import post_db from "../Data/Post_db";
-import {useReqHandler} from "../hooks/useReqHandler";
+import {useRequest} from "../hooks/useRequest";
 import Search from "../Actual/Search";
 import {Button} from "@mui/material";
 
 
 function News() {
-    const {request} = useReqHandler()
+    const {request} = useRequest()
     const [posts, setPosts] = useState([])
 
 
-    useEffect(async () => {
-        try {
+    useEffect(() => {
+        const getPost = async () => {
             const res = await request('http://localhost:5000/post')
             setPosts(res)
-        } catch (e) {
-
         }
+        getPost();
+
     }, [setPosts])
 
     return (

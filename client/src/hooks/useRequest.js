@@ -1,7 +1,7 @@
 import {useState, useCallback} from 'react'
 
 
-export const useReqHandler = () => {
+export const useRequest = () => {
 
     const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
         try {
