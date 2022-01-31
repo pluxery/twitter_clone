@@ -1,24 +1,26 @@
 import React, {useEffect, useState} from 'react'
-import './Post.css'
+import '../Post/Post.css'
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import "../Actual/Trends/TrendsItem.css"
 import {useRequest} from "../hooks/useRequest";
 
 
-function Post({post}) {
+function Retweet({tweetId}) {
     const {request} = useRequest()
+    const [post, setPost] = useState({
 
-    const retweetHandler = async () => {
-        try {
-            const postId = post._id
-            await request('http://localhost:5000/retweet', 'POST', {postId})
-        } catch (e) {
+    })
+
+    useEffect(() => {
+        const getPost = async () => {
+            const res = await request(`http://localhost:5000/post/${tweetId}`)
+            setPost(res)
         }
-    }
+        getPost()
+    }, [setPost])
 
 
     return (
@@ -54,8 +56,7 @@ function Post({post}) {
                 <div className={"post__footer"}>
                     <ChatBubbleOutlineOutlinedIcon fontSize={"small"} className={"post__CommentIcon"}/>
 
-
-                    <RepeatIcon onClick={retweetHandler} fontSize={"small"} className={"post__RetweetIcon"}/>
+                    <RepeatIcon fontSize={"small"} className={"post__RetweetIcon"}/>
 
 
                     <FavoriteBorderIcon fontSize={"small"}
@@ -67,4 +68,4 @@ function Post({post}) {
     )
 }
 
-export default Post
+export default Retweet

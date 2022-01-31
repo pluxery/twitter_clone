@@ -32,7 +32,7 @@ function Sidebar() {
         <div className={"sidebar"}>
             <TwitterIcon className={"sidebar__twitterIcon"}/>
 
-            <NavLink to={"/feed"} className={"sidebar__link"}>
+            <NavLink to={"/"} className={"sidebar__link"}>
                 <SidebarItem Icon={HomeIcon} text={"Home"}/>
             </NavLink>
 

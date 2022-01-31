@@ -6,21 +6,22 @@ import GifIcon from '@mui/icons-material/Gif';
 import MoodIcon from '@mui/icons-material/Mood';
 import DateRangeIcon from '@mui/icons-material/DateRange';
 import {useRequest} from "../hooks/useRequest";
+import {SignInContext} from "../Authorization/SignInContext";
 
 
-function Tweet({avatar}) {
+function Tweet({avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG7ZHHUdN_3p6I5EAb0khNR1ESNmRw_z-vLgs-qma5nH4xSxAGC38uSZ9rldLMUTmGkfw&usqp=CAU"}) {
 
     const {request} = useRequest()
+    const {userId} = useContext(SignInContext)
     const [form, setForm] = useState({
         text: String,
+        postedByUser: userId,
         avatar: avatar,
-
     })
 
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
     }
-
 
     const addHandler = async () => {
         const res = await request('http://localhost:5000/post', 'POST', {...form})

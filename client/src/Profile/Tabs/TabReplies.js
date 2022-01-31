@@ -2,27 +2,26 @@ import React, {useEffect, useState} from "react";
 import "./Tabs.css"
 import Profile from "../Profile";
 import Tabs from "./Tabs";
-import Post from "../../Post/Post";
-import post_db from "../../Data/Post_db";
 import {useRequest} from "../../hooks/useRequest";
+import Retweet from "../../Tweet/Retweet";
+import Post from "../../Post/Post";
 
 export default function TabReplies() {
-        const {request} = useRequest()
-    const [posts, setPosts] = useState([])
-
+    const {request} = useRequest()
+    const [tweets, setTweets] = useState([])
 
     useEffect(() => {
-        const getPost = async () => {
-            const res = await request('http://localhost:5000/post')
-            setPosts(res)
+        const getTweet = async () => {
+            const res = await request('http://localhost:5000/retweet')
+            setTweets(res)
         }
-        getPost();
+        getTweet();
 
-    }, [setPosts])
+    }, [setTweets])
     return (
         <Profile tab={
             <Tabs>
-                {posts.slice(0).reverse().map(post => (<Post post={post}/>))}
+                {tweets.slice(0).reverse().map(tweet => (<Post post={tweet.postId}/>))}
             </Tabs>
         }/>
     )

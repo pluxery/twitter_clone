@@ -4,10 +4,7 @@ import Tweet from "../Tweet/Tweet";
 import Post from "../Post/Post";
 import AutoAwesomeOutlinedIcon from '@mui/icons-material/AutoAwesomeOutlined';
 import Layout from "../Layout/Layout";
-import post_db from "../Data/Post_db";
 import {useRequest} from "../hooks/useRequest";
-import Search from "../Actual/Search";
-import {Button} from "@mui/material";
 
 
 function News() {
@@ -33,10 +30,7 @@ function News() {
                     <AutoAwesomeOutlinedIcon className={"news__tweetStarIcon"}/>
                 </div>
 
-
-                <Tweet
-                    avatar={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG7ZHHUdN_3p6I5EAb0khNR1ESNmRw_z-vLgs-qma5nH4xSxAGC38uSZ9rldLMUTmGkfw&usqp=CAU"}/>
-
+                <Tweet/>
 
                 {posts.slice(0).reverse().map(post => (<Post post={post}/>))}
 

@@ -10,6 +10,7 @@ app.use(express.json({extended: true}))
 
 app.use('/sign', require('./Routers/authRouter'))
 app.use('/post', require('./Routers/postRouter'))
+app.use('/retweet', require('./Routers/retweetRouter'))
 
 const PORT = 5000
 const URI ='mongodb+srv://sema:123@cluster0.2hlcl.mongodb.net/Twitter?retryWrites=true&w=majority'

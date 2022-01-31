@@ -6,7 +6,7 @@ const User = require("../Models/User");
 
 postRouter.get("/", async (req, res) => {
     try {
-        const posts = await Post.find({});
+        const posts = await Post.find({}).populate('postedByUser');
         res.json(posts)
     } catch (error) {
         res.status(400).json({
@@ -28,8 +28,8 @@ postRouter.post("/", async (req, res) => {
 
 postRouter.get('/:id', async (req, res) => {
     try {
-        const post = await Post.findOne({_id: req.params.id})
-        return res.json(post)
+        const post = await Post.findOne({_id: req.params.id}).populate('postedByUser')
+        res.json(post)
     } catch (err) {
         res.status(400).json({message: err.message});
     }
@@ -37,7 +37,7 @@ postRouter.get('/:id', async (req, res) => {
 
 postRouter.post('/search', async (req, res) => {
     try {
-        const posts = await Post.find({text: {$regex: req.body.text}})
+        const posts = await Post.find({text: {$regex: req.body.text}}).populate('postedByUser')
         return res.status(200).json(posts);
     } catch (err) {
         res.status(400).json({message: err.message});

@@ -29,7 +29,7 @@ export default function Login() {
         try {
             const response = await axios.post('http://localhost:5000/sign/login', {...form})
             userData.login(response.data.token, response.data.userId)
-            navigate('/feed')
+            navigate('/')
         } catch (e) {
         }
     }
