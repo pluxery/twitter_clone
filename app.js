@@ -9,7 +9,7 @@ app.use(cors());
 
 app.use(express.json({extended: true}))
 
-const distDir = __dirname + "/dist/";
+const distDir = __dirname;
 
 app.use(express.static(distDir));
 
