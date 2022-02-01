@@ -25,6 +25,7 @@ function Tweet({avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
 
     const addHandler = async () => {
         const res = await request('http://localhost:5000/post', 'POST', {...form})
+        window.location.href = "/";
     }
 
 

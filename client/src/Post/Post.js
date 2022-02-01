@@ -26,9 +26,8 @@ function Post({post}) {
 
     const [likes, setLikes] = useState(post.likes.length)
 
-    const isLike = true
     const pushLike = async () => {
-        const res = await request(`http://localhost:5000/post/like_post/${post._id}`, 'POST', {userId, isLike})
+        const res = await request(`http://localhost:5000/post/like_post/${post._id}`, 'POST', {userId})
         setLikes(res + 1)
     }
 
