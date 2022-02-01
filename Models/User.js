@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose')
+const {Schema, model, Types} = require('mongoose')
 
 const UserSchema = new Schema({
     name: {type: String, required: true},
@@ -7,7 +7,7 @@ const UserSchema = new Schema({
 
     age: {type: Number, min: 14, max: 99},
     sex: {type: String, enum: ['man', 'girl']},
-    city: {type: String, min: 2, max: 30}
+    city: {type: String, min: 2, max: 30},
 })
 
 module.exports = model('User', UserSchema)

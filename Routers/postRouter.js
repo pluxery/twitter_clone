@@ -45,4 +45,14 @@ postRouter.post('/search', async (req, res) => {
 
 })
 
+postRouter.post('/like_post/:id', async (req, res) => {
+    try {
+        const {userId, isLike} = req.body
+        const post = await Post.findByIdAndUpdate(req.params.id, {$push: {likes: userId}})
+        return res.status(200).json(post.likes.length);
+    } catch (err) {
+        res.status(400).json({message: err.message});
+    }
+})
+
 module.exports = postRouter

@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d65d6e1c-f244-4352-8d67-9a940ccec31f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Models/Retweet.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Routers/retweetRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/Tweet/Retweet.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Models/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Routers/postRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routers/postRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Authorization/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Authorization/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/News/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/News/News.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Post/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Post/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Post/PostId.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabReplies.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabReplies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Tweet/Tweet.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Tweet/Tweet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +63,8 @@
       <workItem from="1643354695825" duration="34217000" />
       <workItem from="1643428092843" duration="1962000" />
       <workItem from="1643573400307" duration="10913000" />
-      <workItem from="1643607338005" duration="12627000" />
+      <workItem from="1643607338005" duration="13012000" />
+      <workItem from="1643690604484" duration="7594000" />
     </task>
     <servers />
   </component>

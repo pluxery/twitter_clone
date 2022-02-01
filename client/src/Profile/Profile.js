@@ -38,6 +38,7 @@ function Profile({
     useEffect(() => {
         const getUser = async () => {
             const response = await request(`http://localhost:5000/sign/user/${userId}`)
+            if (response === null)return;
             setUser(response)
         }
         getUser();
@@ -54,7 +55,7 @@ function Profile({
                 <div className={"profile__backBar"}>
                     <ArrowBackIcon className={"profile__backIcon"}/>
                     <div className={"profile__barNameTweets"}>
-                        <h4>{user.name}</h4>
+                        <h4>{user.name | 'user'}</h4>
                         <p className={"profile__textGray"}>{tweets + " tweets"}</p>
                     </div>
                 </div>
