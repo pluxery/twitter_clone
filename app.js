@@ -9,6 +9,10 @@ app.use(cors());
 
 app.use(express.json({extended: true}))
 
+const distDir = __dirname + "/dist/";
+
+app.use(express.static(distDir));
+
 app.use('/sign', require('./Routers/authRouter'))
 app.use('/post', require('./Routers/postRouter'))
 app.use('/retweet', require('./Routers/retweetRouter'))
