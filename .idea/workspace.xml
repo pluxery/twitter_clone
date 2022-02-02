@@ -2,42 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d65d6e1c-f244-4352-8d67-9a940ccec31f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/Retweet.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Retweet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routers/authRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/authRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routers/postRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/postRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routers/retweetRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/retweetRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Actual/FollowWidget/FollowItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Actual/FollowWidget/FollowItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Actual/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Actual/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Actual/Trends/Trends.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Actual/Trends/Trends.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Authorization/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Authorization/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Authorization/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Authorization/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Data/Post_db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Data/Profile_db.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Explore/Explore.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Explore/Explore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/News/News.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/News/News.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Post/Post.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Post/Post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Post/Post.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Post/Post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Profile/EditProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/EditProfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabLikes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabLikes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabMedia.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabMedia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabReplies.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabReplies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Profile/Tabs/TabTweets.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Profile/Tabs/TabTweets.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Register/Register.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Register/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Sidebar/Card/ProfileCard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Sidebar/Card/ProfileCard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Tweet/Retweet.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Tweet/Retweet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Tweet/Tweet.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Tweet/Tweet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/User/User.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/User/User.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useRequest.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -101,7 +69,7 @@
       <workItem from="1643713172665" duration="946000" />
       <workItem from="1643715173715" duration="4504000" />
       <workItem from="1643740766462" duration="614000" />
-      <workItem from="1643758568642" duration="22755000" />
+      <workItem from="1643758568642" duration="24276000" />
     </task>
     <servers />
   </component>
