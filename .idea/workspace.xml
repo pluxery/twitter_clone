@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d65d6e1c-f244-4352-8d67-9a940ccec31f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/hooks/useRequest.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/useRequest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +19,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -30,6 +30,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="24J4ZsHKT8yxAC1GLi467wZJuAg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,7 +66,7 @@
       <workItem from="1643713172665" duration="946000" />
       <workItem from="1643715173715" duration="4504000" />
       <workItem from="1643740766462" duration="614000" />
-      <workItem from="1643758568642" duration="25033000" />
+      <workItem from="1643758568642" duration="28087000" />
     </task>
     <servers />
   </component>

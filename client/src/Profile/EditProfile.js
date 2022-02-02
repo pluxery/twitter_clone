@@ -16,9 +16,9 @@ export default function EditProfile() {
 
     const {request} = useRequest()
     const {userId} = useContext(SignInContext)
-    const [user, setUser] = useState()
+    const [user, setUser] = useState({})
     const getUser = async () => {
-        const response = await request(`http://localhost:5000/sign/user/${userId}`)
+        const response = await request(`/sign/user/${userId}`)
         setUser(response)
     }
 
@@ -37,7 +37,7 @@ export default function EditProfile() {
 
     const updateHandler = async () => {
         try {
-            await axios.put(`http://localhost:5000/sign/update/${userId}`, {...form})
+            await axios.put(`https://twitter-clone-serv.herokuapp.com/sign/update/${userId}`, {...form})
         } catch (e) {
 
         }
