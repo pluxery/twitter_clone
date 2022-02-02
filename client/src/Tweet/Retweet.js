@@ -10,17 +10,17 @@ import {useRequest} from "../hooks/useRequest";
 
 function Retweet({tweetId}) {
     const {request} = useRequest()
-    const [post, setPost] = useState({
+    const [post, setPost] = useState()
 
-    })
-
-    useEffect(() => {
-        const getPost = async () => {
+    const getPost = async () => {
+        try {
             const res = await request(`http://localhost:5000/post/${tweetId}`)
             setPost(res)
+        }catch (e) {
+            
         }
-        getPost()
-    }, [setPost])
+    }
+    useEffect(() => getPost(), [setPost])
 
 
     return (

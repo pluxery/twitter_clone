@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import News from "./News/News";
 import Profile from "./Profile/Profile";
-import User from "./User/User";
 import Notification from "./Notification/Notification";
 import NotificationFragmentAll from "./Notification/NotificationFragmentAll";
 import NotificationFragmentMentions from "./Notification/NotificationFragmentMentions";
@@ -22,7 +21,6 @@ export const useRoutes = (isSignIn) => {
                 <Route path="/" exact element={<News/>}/>
                 <Route path="/profile/:id" exact element={<Profile/>}/>
                 <Route path="/profile/edit" exact element={<EditProfile/>}/>
-                <Route path="/user/:id" exact element={<User/>}/>
 
                 <Route path="/notifications" exact element={<Notification/>}/>
                 <Route path="/notifications/all" exact element={<NotificationFragmentAll/>}/>

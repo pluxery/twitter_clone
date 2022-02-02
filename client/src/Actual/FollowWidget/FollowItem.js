@@ -4,7 +4,7 @@ import './FollowItem.css'
 import {Button} from "@mui/material";
 
 
-export default function FollowItem({avatar, name, username, mark}) {
+export default function FollowItem({avatar, name, username}) {
     return (
         <div className={"followItem"}>
             <Avatar src={avatar}/>

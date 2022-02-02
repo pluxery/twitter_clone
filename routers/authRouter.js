@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 const config = require('config')
 const jwt = require('jsonwebtoken')
 
-const User = require('../Models/User')
+const User = require('../models/User')
 const assert = require("assert");
 const authRouter = Router()
 
@@ -12,7 +12,7 @@ const authRouter = Router()
 authRouter.get("/user/:id", async (req, res) => {
     try {
         const user = await User.findOne({_id: req.params.id});
-        res.json(user)
+        return res.json(user)
     } catch (error) {
         res.status(400).json({
             message: error.message
@@ -22,8 +22,8 @@ authRouter.get("/user/:id", async (req, res) => {
 
 authRouter.put("/update/:id", async (req, res) => {
         try {
-            await User.findByIdAndUpdate(req.params.id, {$set: req.body})
-            return res.status(200).json({result: 'update'});
+            const user = await User.findByIdAndUpdate(req.params.id, {$set: req.body})
+            return res.json(user);
         } catch (err) {
             return res.status(400).json({message: err.message});
         }
@@ -53,7 +53,7 @@ authRouter.post('/register', [
             const hashedPassword = await bcrypt.hash(password, 12)
             const newUser = new User({name, email, age, sex, city, password: hashedPassword})
             await newUser.save()
-            res.status(201).json({message: 'Пользователь создан'})
+            res.json({message: 'Аккаунт создан!'})
         } catch (e) {
             res.status(500).json({message: 'Ошибка'})
         }
@@ -95,7 +95,7 @@ authRouter.post('/login',
             )
 
 
-            res.json({token, userId: user.id})
+            return res.json({token, userId: user.id, message: "Вы вошли!"})
 
         } catch (e) {
             res.status(500).json({message: 'Ошибка'})

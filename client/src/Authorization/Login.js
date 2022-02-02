@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
-import axios from 'axios'
+
 import TwitterIcon from "@mui/icons-material/Twitter";
 import {NavLink, useNavigate} from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
@@ -9,16 +9,25 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import {Button} from "@mui/material";
 import {SignInContext} from "./SignInContext";
 import './Login.css'
+import {useRequest} from "../hooks/useRequest";
+import {useToast} from "../hooks/useToast";
 
 
 export default function Login() {
+    const {request,error,clearError } = useRequest()
     const userData = useContext(SignInContext)
+    const message = useToast()
 
     const [form, setForm] = useState({
         name: '',
         email: '',
         password: ''
     })
+
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
 
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
@@ -27,10 +36,11 @@ export default function Login() {
 
     const loginHandler = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/sign/login', {...form})
-            userData.login(response.data.token, response.data.userId)
+            const response = await request('/sign/login', 'POST', {...form})
+            userData.login(response.token, response.userId)
             navigate('/')
-        } catch (e) {
+        }catch (e) {
+
         }
     }
 

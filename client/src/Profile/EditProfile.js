@@ -3,7 +3,7 @@ import Layout from "../Layout/Layout";
 import {SignInContext} from "../Authorization/SignInContext";
 import {useRequest} from "../hooks/useRequest";
 import './EditProfile.css'
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import axios from "axios";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import BadgeIcon from '@mui/icons-material/Badge';
@@ -16,15 +16,13 @@ export default function EditProfile() {
 
     const {request} = useRequest()
     const {userId} = useContext(SignInContext)
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState()
+    const getUser = async () => {
+        const response = await request(`http://localhost:5000/sign/user/${userId}`)
+        setUser(response)
+    }
 
-    useEffect(() => {
-        const getUser = async () => {
-            const response = await request(`http://localhost:5000/sign/user/${userId}`)
-            setUser(response)
-        }
-        getUser();
-    }, [setUser])
+    useEffect(() => getUser(), [setUser])
 
     const [form, setForm] = useState({
         name: user.name,
@@ -39,8 +37,9 @@ export default function EditProfile() {
 
     const updateHandler = async () => {
         try {
-            const response = await axios.put(`http://localhost:5000/sign/update/${userId}`, {...form})
+            await axios.put(`http://localhost:5000/sign/update/${userId}`, {...form})
         } catch (e) {
+
         }
     }
 

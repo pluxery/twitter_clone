@@ -1,7 +1,7 @@
 const {Schema, model} = require('mongoose')
 
 const RetweetSchema = new Schema({
-    postId: {type: Schema.Types.ObjectId, ref: 'Post', unique: true},
+    post: {type: Schema.Types.ObjectId, ref: 'Post'}
 })
 
 module.exports = model('Retweet', RetweetSchema)

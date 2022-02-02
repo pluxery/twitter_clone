@@ -1,7 +1,6 @@
 const cors = require("cors");
 const express = require('express')
 const mongoose = require('mongoose')
-require('dotenv').config()
 
 const app = express()
 
@@ -9,17 +8,18 @@ app.use(cors());
 
 app.use(express.json({extended: true}))
 
-app.use('/sign', require('./Routers/authRouter'))
-app.use('/post', require('./Routers/postRouter'))
-app.use('/retweet', require('./Routers/retweetRouter'))
+
+app.use('/sign', require('./routers/authRouter'))
+app.use('/post', require('./routers/postRouter'))
+app.use('/retweet', require('./routers/retweetRouter'))
 
 const PORT = 5000 || process.env.PORT
-const URI ='mongodb+srv://sema:123@cluster0.2hlcl.mongodb.net/Twitter?retryWrites=true&w=majority'
+const uri ='mongodb+srv://sema:123@cluster0.2hlcl.mongodb.net/Twitter2?retryWrites=true&w=majority'
 
 
 async function start() {
     try {
-        await mongoose.connect(URI), {
+        await mongoose.connect(uri), {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true

@@ -8,6 +8,9 @@ const UserSchema = new Schema({
     age: {type: Number, min: 14, max: 99},
     sex: {type: String, enum: ['man', 'girl']},
     city: {type: String, min: 2, max: 30},
+
+    likedPosts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+    retweets: [{type: Schema.Types.ObjectId, ref: 'Retweet'}],
 })
 
 module.exports = model('User', UserSchema)

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useState} from 'react'
 import "./Tweet.css"
 import {Button, Avatar} from "@mui/material";
 import CropOriginalIcon from '@mui/icons-material/CropOriginal';
@@ -14,9 +14,8 @@ function Tweet({avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
     const {request} = useRequest()
     const {userId} = useContext(SignInContext)
     const [form, setForm] = useState({
-        text: String,
-        postedByUser: userId,
-        avatar: avatar,
+        text: '',
+        postedByUser: userId
     })
 
     const changeHandler = event => {
@@ -24,8 +23,12 @@ function Tweet({avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9Gc
     }
 
     const addHandler = async () => {
-        const res = await request('http://localhost:5000/post', 'POST', {...form})
-        window.location.href = "/";
+        try {
+            const res = await request('/post', 'POST', {...form})
+            window.location.href = "/";
+        } catch (e) {
+
+        }
     }
 
 

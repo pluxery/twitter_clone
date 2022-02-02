@@ -1,5 +1,4 @@
-import React, {useContext, useState} from 'react';
-import axios from 'axios'
+import React, {useEffect, useState} from 'react';
 import TwitterIcon from "@mui/icons-material/Twitter";
 import {NavLink, useNavigate} from "react-router-dom";
 import GoogleIcon from "@mui/icons-material/Google";
@@ -8,12 +7,14 @@ import AppleIcon from "@mui/icons-material/Apple";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import {Button} from "@mui/material";
 import './Login.css'
-import DateRangeIcon from "@mui/icons-material/DateRange";
 import WcIcon from "@mui/icons-material/Wc";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import {useRequest} from "../hooks/useRequest";
+import {useToast} from "../hooks/useToast";
 
 
 export default function Register() {
+    const {request, error, clearError} = useRequest()
+    const message = useToast()
     const [form, setForm] = useState({
         name: '',
         email: '',
@@ -23,6 +24,12 @@ export default function Register() {
         city: ''
     })
 
+    useEffect(() => {
+        message(error)
+        clearError()
+    }, [error, message, clearError])
+
+
     const changeHandler = event => {
         setForm({...form, [event.target.name]: event.target.value})
     }
@@ -30,9 +37,14 @@ export default function Register() {
 
     const registerHandler = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/sign/register', {...form})
+            const res = await request('/sign/register', 'POST', {...form})
+
+            message(res.data)
+            navigate('/')
         } catch (e) {
+
         }
+
     }
 
     return (

@@ -1,26 +1,34 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Tabs.css"
 import Post from "../../Post/Post";
-import profile_db from "../../Data/Profile_db";
 import {useRequest} from "../../hooks/useRequest";
+import {SignInContext} from "../../Authorization/SignInContext";
 
 export default function TabTweets() {
     const {request} = useRequest()
     const [posts, setPosts] = useState([])
+    const {userId} = useContext(SignInContext)
 
 
-    useEffect(() => {
-        const getPost = async () => {
-            const res = await request('http://localhost:5000/post')
+    const getPosts = async () => {
+        try {
+            const res = await request('/post')
             setPosts(res)
-        }
-        getPost();
+        } catch (e) {
 
-    }, [setPosts])
+        }
+    }
+
+    useEffect(() => getPosts(), [setPosts])
 
     return (
         <div>
-            {posts.slice(0).reverse().map(post => (<Post post={post}/>))}
+            {posts.length > 0 ? posts.slice(0).reverse().map(post => {
+                    if (userId === post.postedByUser._id) {
+                        return (<Post post={post}/>)
+                    }
+                })
+                : <h2>Нет твитов</h2>}
         </div>
     )
 }

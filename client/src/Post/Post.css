@@ -57,11 +57,15 @@
 
 
 }
+.post__RetweetIcon_green {
+    color: lawngreen;
+}
 
 .post__CommentIcon:hover {
 
     color: mediumpurple;
 }
+
 
 .post__RetweetIcon:hover {
 

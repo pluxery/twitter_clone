@@ -1,12 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Layout from "../Layout/Layout";
-
 import "./Explore.css"
-
 import Trends from "../Actual/Trends/Trends";
 import Post from "../Post/Post";
 import {MoreHorizOutlined} from "@material-ui/icons";
-import post_db from "../Data/Post_db";
 import {useRequest} from "../hooks/useRequest";
 import {Button} from "@material-ui/core";
 
@@ -24,11 +21,8 @@ export default function Explore() {
     }
 
     const findHandler = async () => {
-        try {
-            const res = await request('http://localhost:5000/post/search', 'POST', {...form})
-            setPosts(res)
-        } catch (e) {
-        }
+        const res = await request('/post/search', 'POST', {...form})
+        setPosts(res)
     }
 
     return (

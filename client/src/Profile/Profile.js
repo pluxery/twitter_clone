@@ -1,5 +1,4 @@
 import React, {useContext, useEffect, useState} from "react";
-
 import "./Profile.css";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -10,40 +9,30 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
 import Layout from "../Layout/Layout";
 import Tabs from "./Tabs/Tabs";
-import profile_db from "../Data/Profile_db";
-import {NavLink, useNavigate, useParams} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {useRequest} from "../hooks/useRequest";
 import {SignInContext} from "../Authorization/SignInContext";
 import WcIcon from '@mui/icons-material/Wc';
 
-
-function Profile({
-                     avatar = profile_db.avatar,
-                     tweets = profile_db.tweets,
-                     mark = profile_db.mark,
-                     followers = profile_db.followers,
-                     following = profile_db.following,
-                     image = profile_db.image,
-                     miniDescription = profile_db.miniDescription,
-                     fullDescription = profile_db.fullDescription,
-                     tab = <Tabs/>,
-                 }) {
+const image = "https://i.pinimg.com/originals/11/94/bd/1194bd2b268f99c2f739ace4928ed2d9.jpg"
+const avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStAx3uW6Gyx9pIyNquyecY-BMLVIZGx_KaDOMzJhcUMY01gviZzd6x8y2QYUOsWEbMLBo&usqp=CAU"
 
 
+function Profile({tab: tweetTab = <Tabs/>,}) {
     const {request} = useRequest()
     const {userId} = useContext(SignInContext)
-
     const [user, setUser] = useState({})
 
-    useEffect(() => {
-        const getUser = async () => {
-            const response = await request(`http://localhost:5000/sign/user/${userId}`)
-            if (response === null)return;
+    const getUser = async () => {
+        try {
+            const response = await request(`/sign/user/${userId}`)
             setUser(response)
+        }catch (e) {
+            
         }
-        getUser();
-    }, [setUser])
+    }
 
+    useEffect(() => getUser(), [setUser])
 
 
     return (
@@ -55,8 +44,8 @@ function Profile({
                 <div className={"profile__backBar"}>
                     <ArrowBackIcon className={"profile__backIcon"}/>
                     <div className={"profile__barNameTweets"}>
-                        <h4>{user.name | 'user'}</h4>
-                        <p className={"profile__textGray"}>{tweets + " tweets"}</p>
+                        <h4>{user.name}</h4>
+                        <p className={"profile__textGray"}>{"tweets"}</p>
                     </div>
                 </div>
 
@@ -76,17 +65,17 @@ function Profile({
                 </div>
 
                 <div className={"profile__userName"}>
-                    <h2>{user.name} {mark && <VerifiedIcon className={"post__mark"}/>}</h2>
+                    <h2>{user.name} {<VerifiedIcon className={"post__mark"}/>}</h2>
                     <p>{"@" + user.name}</p>
                 </div>
 
                 <div className={"profile__miniInformation"}>
                     <FreeBreakfastOutlinedIcon className={"profile__coffeeIcon"}/>
-                    <span>{miniDescription}</span>
+                    <span>{'описание'}</span>
                 </div>
 
                 <div className={"profile__fullDescription"}>
-                    {fullDescription}
+                    {'студент двфу'}
                 </div>
                 <div className={"profile__geoAndDate"}>
                 <span className={"profile__location"}> <LocationOnOutlinedIcon
@@ -96,15 +85,15 @@ function Profile({
                         className={"profile__dateIcon"}/> {"Age:  " + user.age}</span>
 
                     <span className={"profile__location"}> <WcIcon
-                    className={"profile__geoIcon"}/>{user.sex}</span>
+                        className={"profile__geoIcon"}/>{user.sex}</span>
                 </div>
 
                 <div className={"profile__followInformation"}>
-                    <span className={"profile__textGray"}> <b className={"black"}>{following}</b> following</span>
-                    <span className={"profile__textGray"}> <b className={"black"}>{followers}</b> Followers</span>
+                    <span className={"profile__textGray"}> <b className={"black"}>{'0'}</b> following</span>
+                    <span className={"profile__textGray"}> <b className={"black"}>{'0'}</b> Followers</span>
                 </div>
 
-                {tab}
+                {tweetTab}
 
             </div>
 

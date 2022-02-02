@@ -1,4 +1,3 @@
-import Search from "../Search";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import TrendsItem from "./TrendsItem";
 import React from "react";

@@ -1,35 +1,35 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Tabs.css"
 import Tabs from "./Tabs";
 import Profile from "../Profile";
 import Post from "../../Post/Post";
 import {useRequest} from "../../hooks/useRequest";
+import {SignInContext} from "../../Authorization/SignInContext";
 
 export default function TabLikes() {
     const {request} = useRequest()
     const [posts, setPosts] = useState([])
+    const {userId} = useContext(SignInContext)
 
-
-    useEffect(() => {
-        const getPost = async () => {
-            const res = await request('http://localhost:5000/post')
+    const getPost = async () => {
+        try {
+            const res = await request(`/post/liked/${userId}`)
             setPosts(res)
-        }
-        getPost();
+        } catch (e) {
 
-    }, [setPosts])
+        }
+    }
+    useEffect(() => getPost(), [setPosts])
+
     return (
 
 
         <Profile tab={
             <Tabs>
-                {posts.map((item) => {
-                        if (item.like === true) {
-                            return (<Post post={item}/>)
-                        }
-                    }
-                )
-                }
+                {(posts.slice(0).reverse().map((post) => {
+                    return (<Post post={post}/>)
+
+                }))}
             </Tabs>
         }/>
 

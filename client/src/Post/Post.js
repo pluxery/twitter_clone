@@ -15,20 +15,25 @@ function Post({post}) {
     const {request} = useRequest()
     const {userId} = useContext(SignInContext)
 
+    const [retweeted, setRetweeted] = useState(false)
+    const [liked, setLiked] = useState(false)
+
     const retweetHandler = async () => {
         try {
             const postId = post._id
-            await request('http://localhost:5000/retweet', 'POST', {postId})
+            await request('/retweet/retweet', 'POST', {postId, userId})
+            setRetweeted(true)
         } catch (e) {
         }
     }
 
 
-    const [likes, setLikes] = useState(post.likes.length)
+    const [likes, setLikes] = useState(post.countLikes.length)
 
     const pushLike = async () => {
-        const res = await request(`http://localhost:5000/post/like_post/${post._id}`, 'POST', {userId})
-        setLikes(res + 1)
+        const res = await request(`/post/like/`, 'POST', {userId, postId: post._id})
+        setLikes(res.countLikes.length + 1)
+        setLiked(true)
     }
 
 
@@ -66,11 +71,14 @@ function Post({post}) {
                     <ChatBubbleOutlineOutlinedIcon fontSize={"small"} className={"post__CommentIcon"}/>
 
 
-                    <RepeatIcon onClick={retweetHandler} fontSize={"small"} className={"post__RetweetIcon"}/>
+                    <RepeatIcon onClick={retweetHandler} fontSize={"small"}
+                                className={retweeted ? "post__RetweetIcon_green": null}/>
 
                     <div>
                         <FavoriteBorderIcon onClick={pushLike} fontSize={"small"}
-                                            className={"post__LikeIcon"}/> {likes}
+                                            className={liked? "post__redLikeIcon": "post__LikeIcon" }/> {
+                        likes
+                    }
                     </div>
                     <FileDownloadOutlinedIcon fontSize={"small"} className={"post__ShareIcon"}/>
                 </div>

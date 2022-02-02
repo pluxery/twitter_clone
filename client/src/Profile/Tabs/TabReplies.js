@@ -1,28 +1,40 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Tabs.css"
 import Profile from "../Profile";
 import Tabs from "./Tabs";
 import {useRequest} from "../../hooks/useRequest";
-import Retweet from "../../Tweet/Retweet";
 import Post from "../../Post/Post";
+import {SignInContext} from "../../Authorization/SignInContext";
 
 export default function TabReplies() {
     const {request} = useRequest()
-    const [tweets, setTweets] = useState([])
+    const [retweets, setRetweets] = useState([])
+    const {userId} = useContext(SignInContext)
 
-    useEffect(() => {
-        const getTweet = async () => {
-            const res = await request('http://localhost:5000/retweet')
-            setTweets(res)
+
+    const getPosts = async () => {
+        try {
+            const res = await request('/retweet/retweets', 'POST', {userId})
+            setRetweets(res)
+        } catch (e) {
+
         }
-        getTweet();
+    }
 
-    }, [setTweets])
+    useEffect(() => getPosts(), [setRetweets])
+
     return (
         <Profile tab={
-            <Tabs>
-                {tweets.slice(0).reverse().map(tweet => (<Post post={tweet.postId}/>))}
-            </Tabs>
+            <Tabs children={
+
+                retweets.length > 0 ? retweets.slice(0).reverse().map(tweet => {
+                        {
+                            return (<Post post={tweet.post}/>)
+                        }
+                    })
+                    : <h2>Нет ретвитов</h2>
+
+            }/>
         }/>
     )
 }

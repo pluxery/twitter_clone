@@ -11,15 +11,16 @@ function News() {
     const {request} = useRequest()
     const [posts, setPosts] = useState([])
 
-
-    useEffect(() => {
-        const getPost = async () => {
-            const res = await request('http://localhost:5000/post')
+    const getPosts = async () => {
+        try {
+            const res = await request('/post')
             setPosts(res)
-        }
-        getPost();
+        }catch (e) {
 
-    }, [setPosts])
+        }
+    }
+
+    useEffect(() => getPosts(), [setPosts])
 
     return (
         <Layout active={true}>
@@ -32,7 +33,10 @@ function News() {
 
                 <Tweet/>
 
-                {posts.slice(0).reverse().map(post => (<Post post={post}/>))}
+                {posts.length > 0 ?
+                    posts.slice(0).reverse().map(post =>
+                        (<Post post={post}/>)) :
+                    <h2>Нет постов</h2>}
 
 
             </div>
